@@ -1,10 +1,10 @@
 import { notFound } from "next/navigation";
 
-const shouldbeHidden = true;
+const shouldbeHidden = process.env.NEXT_PUBLIC_HIDE_PAGE;
 
 const page = () => {
   // this page should throw 404
-  if (shouldbeHidden) {
+  if (!!shouldbeHidden) {
     notFound();
   }
 
